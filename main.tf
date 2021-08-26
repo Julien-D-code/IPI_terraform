@@ -20,7 +20,7 @@ provider "azurerm" {
 
  
 
-resource "azurerm_resource_group" "IPI_terraform" {
+resource "azurerm_resource_group" "IPI_terraformgroup" {
   name     = "IPI_terraform"
   location = "westeurope"
 
@@ -34,7 +34,7 @@ resource "azurerm_virtual_network" "IPI_terraformnetwork" {
     name                = "IPI_Vnet"
     address_space       = ["10.0.0.0/16"]
     location            = "westeurope"
-    resource_group_name = azurerm_resource_group.IPI_terraform.name
+    resource_group_name = azurerm_resource_group.IPI_terraformgroup.name
 
     tags = {
         environment = "Terraform Demo"
