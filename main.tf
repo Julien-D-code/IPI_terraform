@@ -146,7 +146,7 @@ resource "azurerm_linux_virtual_machine" "IPI_terraformvm" {
     name                  = "myVM"
     location              = "eastus"
     resource_group_name   = azurerm_resource_group.IPI_terraformgroup.name
-    network_interface_ids = [azurerm_network_interface.myterraformnic.id]
+    network_interface_ids = [azurerm_network_interface.IPI_terraformnic.id]
     size                  = "Standard_DS1_v2"
 
     os_disk {
@@ -172,7 +172,7 @@ resource "azurerm_linux_virtual_machine" "IPI_terraformvm" {
     }
 
     boot_diagnostics {
-        storage_account_uri = azurerm_storage_account.IPI_storageaccount.primary_blob_endpoint
+        storage_account_uri = azurerm_storage_account.mystorageaccount.primary_blob_endpoint
     }
 
     tags = {
